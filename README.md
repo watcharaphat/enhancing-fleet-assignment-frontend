@@ -1,6 +1,6 @@
 # enhancing-fleet-assignment-frontend
 
-> A Senior project
+> A senior project
 
 ## Build Setup
 
