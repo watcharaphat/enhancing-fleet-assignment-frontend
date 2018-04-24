@@ -96,7 +96,7 @@ export default {
 
 <style scoped>
 .schedule-option {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 .submit-button {
   padding-top: 0.5em;
