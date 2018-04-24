@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Navbar from '@/components/navbar/Navbar';
 import FleetAssignment from '@/components/fleet-assignment/FleetAssignment';
 
 Vue.use(Router);
@@ -11,10 +10,6 @@ export default new Router({
     {
       path: '/',
       component: FleetAssignment,
-    },
-    {
-      path: '/nav',
-      component: Navbar,
     },
   ],
 });

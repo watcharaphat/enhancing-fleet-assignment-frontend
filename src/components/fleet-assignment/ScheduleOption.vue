@@ -1,13 +1,16 @@
 <template>
   <div class="schedule-option">
     <div class="field">
-      <datepicker
-        v-model="date"
-        :input-class="'input'"
-        :placeholder="'Select date'"
-      ></datepicker>
+      <div class="control">
+        <label class="label">Select Date</label>
+        <datepicker
+          v-model="date"
+          :input-class="'input'"
+        ></datepicker>
+      </div>
     </div>
     <div class="field">
+      <label class="label">Select Airline</label>
       <div class="control">
         <input type="radio" id="pg" value="PG" v-model="selectedAirline" />
         <label for="pg">Bangkok Airways</label>
@@ -31,11 +34,9 @@
     </div>
     <div class="field is-grouped">
       <div class="control">
-        <button class="button is-link">Submit</button>
+        <button v-on:click="getSchedule" class="button is-link">Submit</button>
       </div>
     </div>
-    <h1>isLoading: {{ isLoading }}</h1>
-    <a v-on:click="getSchedule">get schedule</a>
   </div>
 </template>
 
@@ -64,11 +65,23 @@ export default {
     isLoading() {
       return this.$store.state.scheduleIsLoading;
     },
+    isSubmitReady() {
+      return Boolean(this.selectedAirline) && Boolean(this.selectedAlgorithm) && Boolean(this.date);
+    },
   },
   methods: {
     getSchedule() {
       this.$store.commit('getFlightSchedule', this.query);
+      this.$router.push(this.query);
     },
+  },
+  mounted() {
+    if (this.$route.query.date) {
+      this.date = moment(this.$route.query.date, 'DD-MMM-YYYY').toDate();
+    }
+    this.selectedAlgorithm = this.$route.query.algorithm;
+    this.selectedAirline = this.$route.query.airline;
+    if (this.isSubmitReady) this.getSchedule();
   },
 };
 </script>

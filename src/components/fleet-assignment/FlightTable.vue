@@ -1,6 +1,11 @@
 <template>
   <div>
-    <table v-if="schedule" class="table is-striped is-hoverable">
+    <div v-if="isLoading">
+      <div class="loading-indicator">
+        <pulse-loader :color="'#2196F3'" :size="'3rem'"></pulse-loader>
+      </div>
+    </div>
+    <table v-if="!isLoading && schedule" class="table is-striped is-hoverable">
       <thead>
         <tr>
           <th>Flight</th>
@@ -28,11 +33,26 @@
 </template>
 
 <script>
+import PulseLoader from 'vue-spinner/src/PulseLoader';
+
 export default {
+  components: {
+    PulseLoader,
+  },
   computed: {
     schedule() {
       return this.$store.state.schedule;
     },
+    isLoading() {
+      return this.$store.state.scheduleIsLoading;
+    },
   },
 };
 </script>
+
+<style scoped>
+.loading-indicator {
+  padding-top: 18%;
+  text-align: center;
+}
+</style>

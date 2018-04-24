@@ -12,11 +12,7 @@ Vue.use(Vuex);
 Vue.config.productionTip = false;
 
 // axios config
-axios.defaults.baseURL = 'http://watcharaphat.com:3000';
-// axios.defaults.headers = {
-//   'Access-Control-Allow-Origin': '*',
-//   'Allow-Control-Allow-Origin': '*',
-// };
+axios.defaults.baseURL = 'http://localhost:3000';
 
 /* eslint-disable no-new */
 new Vue({
