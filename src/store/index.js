@@ -8,28 +8,23 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     schedule: null,
+    scheduleIsLoading: false,
   },
   mutations: {
-    getFlightSchedule: async (state) => {
+    getFlightSchedule: async (state, query) => {
       const url = '/flights';
-      const query = '?date=01-Jan-2017&airline=PG&algorithm=greedy';
-
       const queryString = `${url}/${query}`;
 
       let response;
+      state.scheduleIsLoading = true;
       try {
         response = await axios.get(queryString);
       } catch (error) {
         console.error('Error on axios in mutations', error);
       }
 
-      // axios.get(queryString).then((result) => {
-      //   console.log(result);
-      // }).catch((error) => {
-      //   console.error('Error on axios in mutations', error);
-      // });
-
       state.schedule = response.data;
+      state.scheduleIsLoading = false;
     },
   },
 });
