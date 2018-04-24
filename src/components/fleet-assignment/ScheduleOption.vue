@@ -6,6 +6,9 @@
         <datepicker
           v-model="date"
           :input-class="'input'"
+          :format="'dd-MMM-yyyy'"
+          :full-month-name="true"
+          :disabled="disabledDates"
         ></datepicker>
       </div>
     </div>
@@ -32,9 +35,10 @@
         </div>
       </div>
     </div>
-    <div class="field is-grouped">
+    <div class="field is-grouped submit-button">
       <div class="control">
-        <button v-on:click="getSchedule" class="button is-link">Submit</button>
+        <button v-if="isSubmitReady" v-on:click="getSchedule" class="button is-link">Submit</button>
+        <button v-else class="button is-light disabled">Submit</button>
       </div>
     </div>
   </div>
@@ -50,9 +54,13 @@ export default {
   },
   data() {
     return {
-      date: null,
+      date: new Date(2017, 0, 1),
       selectedAirline: '',
       selectedAlgorithm: '',
+      disabledDates: {
+        to: new Date(2017, 0, 1),
+        from: new Date(2017, 11, 31),
+      },
     };
   },
   computed: {
@@ -89,5 +97,11 @@ export default {
 <style scoped>
 .schedule-option {
   padding-top: 1rem;
+}
+.submit-button {
+  padding-top: 0.5em;
+}
+.button.disabled {
+  cursor: not-allowed;
 }
 </style>
