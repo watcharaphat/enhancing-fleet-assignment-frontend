@@ -1,4 +1,3 @@
-/* eslint-disable */
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
@@ -20,6 +19,7 @@ export default new Vuex.Store({
       try {
         response = await axios.get(queryString);
       } catch (error) {
+        // eslint-disable-next-line
         console.error('Error on axios in mutations', error);
       }
 

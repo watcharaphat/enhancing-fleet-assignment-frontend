@@ -38,6 +38,6 @@ export default {
 
 <style scoped>
 .nav-section {
-  padding-bottom: 60px;
+  margin-bottom: 60px;
 }
 </style>

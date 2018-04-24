@@ -2,16 +2,19 @@
   <div id="app">
     <navbar></navbar>
     <router-view/>
+    <helium-footer></helium-footer>
   </div>
 </template>
 
 <script>
 import Navbar from './components/navbar/Navbar';
+import HeliumFooter from './components/footer/HeliumFooter';
 
 export default {
   name: 'App',
   components: {
     Navbar,
+    HeliumFooter,
   },
 };
 </script>

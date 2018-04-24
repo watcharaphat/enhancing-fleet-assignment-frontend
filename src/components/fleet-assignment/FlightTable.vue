@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="flight-table-area">
     <div v-if="isLoading">
       <div class="loading-indicator">
-        <pulse-loader :color="'#2196F3'" :size="'3rem'"></pulse-loader>
+        <pulse-loader :color="'#2196F3'" :size="'2rem'"></pulse-loader>
       </div>
     </div>
     <table v-if="!isLoading && schedule" class="table is-striped is-hoverable">
@@ -54,5 +54,8 @@ export default {
 .loading-indicator {
   padding-top: 18%;
   text-align: center;
+}
+.flight-table-area {
+  min-height: 30rem;
 }
 </style>
