@@ -6,7 +6,7 @@
           Enhancing Fleet Assignment Algorithm
         </h1>
         <h2 class="subtitle">
-          A computer engineering student senior project
+          A computer engineering student's senior project
         </h2>
       </div>
     </div>
