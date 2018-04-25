@@ -10,7 +10,7 @@ import './assets/sass/main.scss';
 Vue.config.productionTip = false;
 
 // axios config
-axios.defaults.baseURL = 'http://api.watcharaphat.com';
+axios.defaults.baseURL = 'http://localhost:3000';
 
 /* eslint-disable no-new */
 new Vue({

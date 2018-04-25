@@ -31,6 +31,7 @@
             <option value="ts">Time Space Network</option>
             <option value="dynamic">Dynamic Programming</option>
             <option value="greedy">Greedy</option>
+            <option value="maxflow">Max Flow</option>
           </select>
         </div>
       </div>
