@@ -78,6 +78,16 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@progress/kendo-base-components-vue-wrapper@2018.1.313":
+  version "2018.1.313"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-base-components-vue-wrapper/-/kendo-base-components-vue-wrapper-2018.1.313.tgz#e7dad4ef37d359f46f9784e1759eb224dd3dad95"
+
+"@progress/kendo-gantt-vue-wrapper@^2018.1.313":
+  version "2018.1.313"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-gantt-vue-wrapper/-/kendo-gantt-vue-wrapper-2018.1.313.tgz#443b29b177eff4f818df4c9da3e5a245fcd9ce80"
+  dependencies:
+    "@progress/kendo-base-components-vue-wrapper" "2018.1.313"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
