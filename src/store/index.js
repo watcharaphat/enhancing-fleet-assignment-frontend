@@ -7,6 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     schedule: null,
+    scheduleSummary: null,
     scheduleIsLoading: false,
   },
   mutations: {
@@ -23,7 +24,8 @@ export default new Vuex.Store({
         console.error('Error on axios in mutations', error);
       }
 
-      state.schedule = response.data;
+      state.schedule = response.data.schedule;
+      state.schedule.scheduleSummary = response.data.summary;
       state.scheduleIsLoading = false;
     },
   },
